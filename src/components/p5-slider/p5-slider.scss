@@ -1,0 +1,57 @@
+input[type=range]{
+    -webkit-appearance: none;
+    width:85%;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateY(-40%);
+    transform: translateX(-50%);
+}
+
+input[type="range"]:focus,
+input[type="range"]:active {
+
+    /* 輪郭線を非表示 */
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+
+    /* 背景色を指定 */
+    background-color: gray;
+
+    /* 高さを指定 */
+    height: 4px;
+
+    /* 幅を指定 */
+    width: 100%;
+
+}
+
+input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width: 25px;
+    height: 25px;
+    background-image:url("http://www.wanpug.com/illust/illust2148.png");
+    background-size:contain;
+    background-repeat:no-repeat;
+    margin-top:-8px;
+    transform: rotate(-10deg);
+}
+
+.p5-slider {
+    position:relative;
+    display: inline-block;
+    width:100%;
+    height:30px;
+    text-align: center;
+}
+
+.p5-slider-frame {
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100%;
+    z-index: -1;
+}

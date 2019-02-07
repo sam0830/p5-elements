@@ -41,6 +41,18 @@ export namespace Components {
     'middle'?: string;
   }
 
+  interface P5Slider {
+    'max': number;
+    'min': number;
+    'step': number;
+  }
+  interface P5SliderAttributes extends StencilHTMLAttributes {
+    'max'?: number;
+    'min'?: number;
+    'onChange'?: (event: CustomEvent) => void;
+    'step'?: number;
+  }
+
   interface P5Toggle {
     'checked': boolean;
   }
@@ -53,11 +65,13 @@ export namespace Components {
 declare global {
   interface StencilElementInterfaces {
     'MyComponent': Components.MyComponent;
+    'P5Slider': Components.P5Slider;
     'P5Toggle': Components.P5Toggle;
   }
 
   interface StencilIntrinsicElements {
     'my-component': Components.MyComponentAttributes;
+    'p5-slider': Components.P5SliderAttributes;
     'p5-toggle': Components.P5ToggleAttributes;
   }
 
@@ -68,6 +82,12 @@ declare global {
     new (): HTMLMyComponentElement;
   };
 
+  interface HTMLP5SliderElement extends Components.P5Slider, HTMLStencilElement {}
+  var HTMLP5SliderElement: {
+    prototype: HTMLP5SliderElement;
+    new (): HTMLP5SliderElement;
+  };
+
   interface HTMLP5ToggleElement extends Components.P5Toggle, HTMLStencilElement {}
   var HTMLP5ToggleElement: {
     prototype: HTMLP5ToggleElement;
@@ -76,11 +96,13 @@ declare global {
 
   interface HTMLElementTagNameMap {
     'my-component': HTMLMyComponentElement
+    'p5-slider': HTMLP5SliderElement
     'p5-toggle': HTMLP5ToggleElement
   }
 
   interface ElementTagNameMap {
     'my-component': HTMLMyComponentElement;
+    'p5-slider': HTMLP5SliderElement;
     'p5-toggle': HTMLP5ToggleElement;
   }
 

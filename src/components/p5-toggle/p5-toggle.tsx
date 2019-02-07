@@ -5,7 +5,7 @@ import { Component, Prop, Event, EventEmitter } from "@stencil/core";
     styleUrl: "p5-toggle.scss",
     shadow: true
 })
-export class P5ToggleComponent {
+export class P5Toggle {
     @Prop() checked: boolean;
     @Event() change: EventEmitter;
 

@@ -16,10 +16,13 @@
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@types/jest": "^24.0.0"
+  },
   "devDependencies": {
     "@stencil/core": "~0.16.2",
     "@stencil/sass": "^0.1.1"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": ["web components", "components", "stencil", "ionic", "webapp", "custom elements", "pwa", "progressive web app"],
 }
