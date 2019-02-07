@@ -15,7 +15,7 @@ npm i p5-elements -D
 # Usage
 Import into your module script:
 ```ts
-import { P5Toggle } from 'wired-elements';
+import { P5Toggle } from 'p5-elements';
 ```
 Alternatively, load a bundled version from the dist folder or from CDN:
 ```html
