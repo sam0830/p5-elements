@@ -40,15 +40,25 @@ export namespace Components {
     */
     'middle'?: string;
   }
+
+  interface P5Toggle {
+    'checked': boolean;
+  }
+  interface P5ToggleAttributes extends StencilHTMLAttributes {
+    'checked'?: boolean;
+    'onChange'?: (event: CustomEvent) => void;
+  }
 }
 
 declare global {
   interface StencilElementInterfaces {
     'MyComponent': Components.MyComponent;
+    'P5Toggle': Components.P5Toggle;
   }
 
   interface StencilIntrinsicElements {
     'my-component': Components.MyComponentAttributes;
+    'p5-toggle': Components.P5ToggleAttributes;
   }
 
 
@@ -58,12 +68,20 @@ declare global {
     new (): HTMLMyComponentElement;
   };
 
+  interface HTMLP5ToggleElement extends Components.P5Toggle, HTMLStencilElement {}
+  var HTMLP5ToggleElement: {
+    prototype: HTMLP5ToggleElement;
+    new (): HTMLP5ToggleElement;
+  };
+
   interface HTMLElementTagNameMap {
     'my-component': HTMLMyComponentElement
+    'p5-toggle': HTMLP5ToggleElement
   }
 
   interface ElementTagNameMap {
     'my-component': HTMLMyComponentElement;
+    'p5-toggle': HTMLP5ToggleElement;
   }
 
 
