@@ -22,5 +22,5 @@ Alternatively, load a bundled version from the dist folder or from CDN:
 <script src="https://unpkg.com/wired-elements@latest/dist/p5-elements.js"></script>
 ```
 
-#License
+# License
 [MIT License](https://github.com/sam0830/p5-elements/blob/master/LICENSE)
