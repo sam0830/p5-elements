@@ -19,7 +19,7 @@ import { P5Toggle } from 'p5-elements';
 ```
 Alternatively, load a bundled version from the dist folder or from CDN:
 ```html
-<script src="https://unpkg.com/wired-elements@latest/dist/p5-elements.js"></script>
+<script src="https://unpkg.com/p5-elements@latest/dist/p5-elements.js"></script>
 ```
 
 # License
