@@ -1,6 +1,6 @@
 {
   "name": "p5-elements",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Stencil Component Starter",
   "module": "dist/esm/index.js",
   "main": "dist/p5-elements.js",
