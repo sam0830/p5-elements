@@ -53,11 +53,8 @@ export namespace Components {
     'step'?: number;
   }
 
-  interface P5Toggle {
-    'checked': boolean;
-  }
+  interface P5Toggle {}
   interface P5ToggleAttributes extends StencilHTMLAttributes {
-    'checked'?: boolean;
     'onChange'?: (event: CustomEvent) => void;
   }
 }

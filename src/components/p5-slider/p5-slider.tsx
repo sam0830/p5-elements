@@ -26,7 +26,7 @@ export class P5Slider {
                         <polygon points="2,100 99,100 100,0 0,0"></polygon>
                     </svg>
                     <svg class="p5-slider-frame" viewBox="0,0,100,100" preserveAspectRatio="none" fill="black">
-                        <polygon points="7,90 95,90 95,10 5,10"></polygon>
+                        <polygon points="7,90 95,90 97,10 5,10"></polygon>
                     </svg>
                 </label>
             </div>

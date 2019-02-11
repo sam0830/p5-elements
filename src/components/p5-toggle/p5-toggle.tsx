@@ -1,4 +1,4 @@
-import { Component, Prop, Event, EventEmitter } from "@stencil/core";
+import { Component, Event, EventEmitter, State } from "@stencil/core";
 
 @Component({
     tag: "p5-toggle",
@@ -6,18 +6,20 @@ import { Component, Prop, Event, EventEmitter } from "@stencil/core";
     shadow: true
 })
 export class P5Toggle {
-    @Prop() checked: boolean;
+    @State() checked: boolean;
     @Event() change: EventEmitter;
 
     toggleChanged(e) {
+        this.checked = ! this.checked;
         console.log(e.target.checked);
         this.change.emit(e.target.checked);
     }
+
     render() {
         return (
             <div>
                 <label class="switch">
-                    <input type="checkbox" checked={this.checked} onChange={(e: UIEvent) =>this.toggleChanged(e)} />
+                    <input type="checkbox" checked={this.checked} onChange={(e: UIEvent) => this.toggleChanged(e)} />
                     <div class="slider"></div>
 
                     <svg viewBox="0,0,100,100" preserveAspectRatio="none">
