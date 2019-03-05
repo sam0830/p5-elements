@@ -1,0 +1,33 @@
+::slotted(img) {
+    display: block;
+    width: 100%;
+    max-width:100%;
+    object-fit: contain;
+}
+
+.p5-card {
+    max-width:500px;
+}
+
+.card-border {
+    padding: 0.2em 0.3em;
+    clip-path: polygon(0 0, 97% 8%, 94% 90%, 4% 99%);
+}
+.card-outer {
+    padding: 0.5em 0.8em;
+    clip-path: polygon(0 0, 97% 8%, 94% 90%, 4% 99%);
+}
+
+.card-inner {
+    padding: 2em 8%;
+    clip-path: polygon(0 0, 97.5% 8%, 94% 90%, 3.2% 99%);
+    color:white;
+}
+
+.color-black {
+    background-color: black;
+}
+
+.color-white {
+    background-color: white;
+}

@@ -1,0 +1,29 @@
+.select-outer {
+  margin: 0 auto;
+  padding: 0.5em 0.8em;
+  clip-path: polygon(0 0, 99% 8%, 100% 99%, 2% 99%);
+  background-color: black;
+}
+
+.select-inner {
+    padding: 0 8%;
+    clip-path: polygon(0 0, 97.5% 8%, 98% 90%, 2.1% 99%);
+    color:black;
+    background-color: white;
+}
+
+.select-menu {
+  margin: 0 auto;
+  width:90%;
+  background-color: black;
+  text-align: center;
+  color:white;
+}
+
+.active {
+  display: block;
+}
+
+.inactive {
+  display: none;
+}

@@ -41,6 +41,33 @@ export namespace Components {
     'middle'?: string;
   }
 
+  interface P5Card {
+    'borderColor': string;
+    'innerColor': string;
+    'outerColor': string;
+  }
+  interface P5CardAttributes extends StencilHTMLAttributes {
+    'borderColor'?: string;
+    'innerColor'?: string;
+    'outerColor'?: string;
+  }
+
+  interface P5SelectOption {
+    'value': string;
+  }
+  interface P5SelectOptionAttributes extends StencilHTMLAttributes {
+    'value'?: string;
+  }
+
+  interface P5Select {
+    'placeholder': string;
+    'value'?: any | null;
+  }
+  interface P5SelectAttributes extends StencilHTMLAttributes {
+    'placeholder'?: string;
+    'value'?: any | null;
+  }
+
   interface P5Slider {
     'max': number;
     'min': number;
@@ -62,12 +89,18 @@ export namespace Components {
 declare global {
   interface StencilElementInterfaces {
     'MyComponent': Components.MyComponent;
+    'P5Card': Components.P5Card;
+    'P5SelectOption': Components.P5SelectOption;
+    'P5Select': Components.P5Select;
     'P5Slider': Components.P5Slider;
     'P5Toggle': Components.P5Toggle;
   }
 
   interface StencilIntrinsicElements {
     'my-component': Components.MyComponentAttributes;
+    'p5-card': Components.P5CardAttributes;
+    'p5-select-option': Components.P5SelectOptionAttributes;
+    'p5-select': Components.P5SelectAttributes;
     'p5-slider': Components.P5SliderAttributes;
     'p5-toggle': Components.P5ToggleAttributes;
   }
@@ -77,6 +110,24 @@ declare global {
   var HTMLMyComponentElement: {
     prototype: HTMLMyComponentElement;
     new (): HTMLMyComponentElement;
+  };
+
+  interface HTMLP5CardElement extends Components.P5Card, HTMLStencilElement {}
+  var HTMLP5CardElement: {
+    prototype: HTMLP5CardElement;
+    new (): HTMLP5CardElement;
+  };
+
+  interface HTMLP5SelectOptionElement extends Components.P5SelectOption, HTMLStencilElement {}
+  var HTMLP5SelectOptionElement: {
+    prototype: HTMLP5SelectOptionElement;
+    new (): HTMLP5SelectOptionElement;
+  };
+
+  interface HTMLP5SelectElement extends Components.P5Select, HTMLStencilElement {}
+  var HTMLP5SelectElement: {
+    prototype: HTMLP5SelectElement;
+    new (): HTMLP5SelectElement;
   };
 
   interface HTMLP5SliderElement extends Components.P5Slider, HTMLStencilElement {}
@@ -93,12 +144,18 @@ declare global {
 
   interface HTMLElementTagNameMap {
     'my-component': HTMLMyComponentElement
+    'p5-card': HTMLP5CardElement
+    'p5-select-option': HTMLP5SelectOptionElement
+    'p5-select': HTMLP5SelectElement
     'p5-slider': HTMLP5SliderElement
     'p5-toggle': HTMLP5ToggleElement
   }
 
   interface ElementTagNameMap {
     'my-component': HTMLMyComponentElement;
+    'p5-card': HTMLP5CardElement;
+    'p5-select-option': HTMLP5SelectOptionElement;
+    'p5-select': HTMLP5SelectElement;
     'p5-slider': HTMLP5SliderElement;
     'p5-toggle': HTMLP5ToggleElement;
   }
