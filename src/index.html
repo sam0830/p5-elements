@@ -12,19 +12,61 @@
         body {
             background-color:red;
         }
+        p5-select {
+          width:300px;
+        }
     </style>
-  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
-  <p5-select placeholder="aaaaaaaaa">
-    <p5-select-option value="その1">asasas</p5-select-option>
-    <p5-select-option value="その2">asasas</p5-select-option>
+  <!-- <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component> -->
+  <!-- <p5-modal></p5-modal> -->
+  <p5-select placeholder="choose character">
+    <p5-select-option value="joker">Joker</p5-select-option>
+    <p5-select-option value="molgana">Skull</p5-select-option>
+    <p5-select-option value="molgana">Panther</p5-select-option>
+    <p5-select-option value="molgana">Morgana</p5-select-option>
+    <p5-select-option value="molgana">Fox</p5-select-option>
+    <p5-select-option value="molgana">Queen</p5-select-option>
+    <p5-select-option value="molgana">Navi</p5-select-option>
+    <p5-select-option value="molgana">Noir</p5-select-option>
   </p5-select>
-  <p5-toggle></p5-toggle>
+
+  <!-- <p5-toggle></p5-toggle>
   <div style="width:100%">
       <p5-slider></p5-slider>
   </div>
     <p5-card>
         <img src="https://cdn-natgeo.nikkeibp.co.jp/atcl/news/16/060200197/ph_thumb.jpg?__scale=w:500,h:468&_sh=0ca02504a0" alt="">
          Nothing's gonna make your husband or wife madder than coming home and having a snow-covered dinner. The secret to doing anything is believing that you can do it. Anything that you believe you can do strong enough, you can do. Anything. As long as you believe. We'll put all the little clouds in and let them dance around and have fun. God gave you this gift of imagination. Use it.
-    </p5-card>
+    </p5-card> -->
+    <p5-modal-controller></p5-modal-controller>
+    <button id="bt"></button>
+    <script>
+    customElements.define('modal-page', class extends HTMLElement {
+      constructor() {
+        super();
+        this.attachShadow({mode:'open'});
+        this.shadowRoot.innerHTML = `
+        <div>
+          <h3>何だかなぁ</h3>
+        </div>
+        `;
+      }
+    connectedCallback() {
+    console.log("connected");
+    console.log(this.prop1);
+      }
+    });
+    document.querySelector('#bt').addEventListener('click',async ()=>{
+      const modal = await document.querySelector('p5-modal-controller').create({
+        component:'modal-page',
+        componentProps: {prop1:'引数1', prop2:'引数2'},
+        showBackdrop:false,
+      });
+      await modal.present();
+      const data = await modal.onDidDismiss();console.log(data);
+    });
+
+
+    </script>
+
 </body>
 </html>

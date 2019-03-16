@@ -8,6 +8,12 @@
 import '@stencil/core';
 
 
+import {
+  ModalOptions,
+} from './components/p5-modal-controller/p5-modal-controller';
+import {
+  Event,
+} from '@stencil/core';
 
 
 export namespace Components {
@@ -52,6 +58,29 @@ export namespace Components {
     'outerColor'?: string;
   }
 
+  interface P5ModalController {
+    'create': (options: ModalOptions) => Promise<any>;
+  }
+  interface P5ModalControllerAttributes extends StencilHTMLAttributes {}
+
+  interface P5Modal {
+    'component': HTMLElement;
+    'componentProps'?: undefined | { [key: string]: any; };
+    'dismiss': (data?: any, role?: string) => Promise<boolean>;
+    'onDidDismiss': () => Promise<{}>;
+    'present': () => Promise<void>;
+    'showBackdrop': boolean;
+  }
+  interface P5ModalAttributes extends StencilHTMLAttributes {
+    'component'?: HTMLElement;
+    'componentProps'?: undefined | { [key: string]: any; };
+    /**
+    * Emitted after the modal has dismissed.
+    */
+    'onP5ModalDidDismiss'?: (event: CustomEvent) => void;
+    'showBackdrop'?: boolean;
+  }
+
   interface P5SelectOption {
     'value': string;
   }
@@ -61,6 +90,7 @@ export namespace Components {
 
   interface P5Select {
     'placeholder': string;
+    'test': () => Promise<void>;
     'value'?: any | null;
   }
   interface P5SelectAttributes extends StencilHTMLAttributes {
@@ -90,6 +120,8 @@ declare global {
   interface StencilElementInterfaces {
     'MyComponent': Components.MyComponent;
     'P5Card': Components.P5Card;
+    'P5ModalController': Components.P5ModalController;
+    'P5Modal': Components.P5Modal;
     'P5SelectOption': Components.P5SelectOption;
     'P5Select': Components.P5Select;
     'P5Slider': Components.P5Slider;
@@ -99,6 +131,8 @@ declare global {
   interface StencilIntrinsicElements {
     'my-component': Components.MyComponentAttributes;
     'p5-card': Components.P5CardAttributes;
+    'p5-modal-controller': Components.P5ModalControllerAttributes;
+    'p5-modal': Components.P5ModalAttributes;
     'p5-select-option': Components.P5SelectOptionAttributes;
     'p5-select': Components.P5SelectAttributes;
     'p5-slider': Components.P5SliderAttributes;
@@ -116,6 +150,18 @@ declare global {
   var HTMLP5CardElement: {
     prototype: HTMLP5CardElement;
     new (): HTMLP5CardElement;
+  };
+
+  interface HTMLP5ModalControllerElement extends Components.P5ModalController, HTMLStencilElement {}
+  var HTMLP5ModalControllerElement: {
+    prototype: HTMLP5ModalControllerElement;
+    new (): HTMLP5ModalControllerElement;
+  };
+
+  interface HTMLP5ModalElement extends Components.P5Modal, HTMLStencilElement {}
+  var HTMLP5ModalElement: {
+    prototype: HTMLP5ModalElement;
+    new (): HTMLP5ModalElement;
   };
 
   interface HTMLP5SelectOptionElement extends Components.P5SelectOption, HTMLStencilElement {}
@@ -145,6 +191,8 @@ declare global {
   interface HTMLElementTagNameMap {
     'my-component': HTMLMyComponentElement
     'p5-card': HTMLP5CardElement
+    'p5-modal-controller': HTMLP5ModalControllerElement
+    'p5-modal': HTMLP5ModalElement
     'p5-select-option': HTMLP5SelectOptionElement
     'p5-select': HTMLP5SelectElement
     'p5-slider': HTMLP5SliderElement
@@ -154,6 +202,8 @@ declare global {
   interface ElementTagNameMap {
     'my-component': HTMLMyComponentElement;
     'p5-card': HTMLP5CardElement;
+    'p5-modal-controller': HTMLP5ModalControllerElement;
+    'p5-modal': HTMLP5ModalElement;
     'p5-select-option': HTMLP5SelectOptionElement;
     'p5-select': HTMLP5SelectElement;
     'p5-slider': HTMLP5SliderElement;

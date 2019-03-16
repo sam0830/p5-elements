@@ -1,4 +1,4 @@
-import { Component, Prop, State} from "@stencil/core";
+import { Component, Prop, State, Method} from "@stencil/core";
 @Component({
   tag: "p5-select",
   styleUrl: "p5-select.scss",
@@ -21,6 +21,10 @@ export class P5Select {
 
   }
 
+  @Method() async test() {
+    console.log("テストだよ");
+  }
+
   menuToggle() {
     this.menuClosed = !this.menuClosed;
   }
@@ -33,7 +37,7 @@ export class P5Select {
 
   render() {
     return (
-      <div>
+      <div class="wrapper">
         <div class="select-outer">
           <div class="select-inner" onClick={()=>this.menuToggle()}>
             {this.title}

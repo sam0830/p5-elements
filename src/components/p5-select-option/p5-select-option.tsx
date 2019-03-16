@@ -9,9 +9,6 @@ export class P5SelectOption {
   constructor() {
 
   }
-  componentDidLoad() {
-
-  }
 
   hostData() {
     return {
