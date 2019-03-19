@@ -12,6 +12,10 @@
     "pwa",
     "progressive web app"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sam0830/p5-elements.git",
+  },
   "module": "dist/esm/index.js",
   "main": "dist/p5-elements.js",
   "unpkg": "dist/ionic.js",
@@ -30,7 +34,11 @@
   "devDependencies": {
     "@stencil/core": "~0.18.0",
     "@stencil/sass": "^0.1.1",
-    "@types/jest": "^24.0.9"
+    "@types/jest": "23.3.14",
+    "@types/puppeteer": "1.12.3",
+    "jest": "23.6.0",
+    "jest-cli": "23.6.0",
+    "puppeteer": "1.11.0"
   },
   "license": "MIT"
 }
