@@ -14,7 +14,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/sam0830/p5-elements.git",
+    "url": "git+https://github.com/sam0830/p5-elements.git"
   },
   "module": "dist/esm/index.js",
   "main": "dist/p5-elements.js",
