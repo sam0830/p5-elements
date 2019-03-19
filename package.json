@@ -14,8 +14,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sam0830/p5-elements.git"
+    "url": "git@github.com:sam0830/p5-elements.git"
   },
+  "author": "Takahiro Wakano",
   "module": "dist/esm/index.js",
   "main": "dist/p5-elements.js",
   "unpkg": "dist/ionic.js",
